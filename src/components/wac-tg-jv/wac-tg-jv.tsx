@@ -1,9 +1,4 @@
 import { Component, Host, h } from '@stencil/core';
-import '@material/web/button/outlined-button.js';
-import '@material/web/button/filled-button.js';
-import '@material/web/textfield/filled-text-field'
-import '@material/web/textfield/outlined-text-field'
-
 
 @Component({
   tag: 'wac-tg-jv',
@@ -12,7 +7,9 @@ import '@material/web/textfield/outlined-text-field'
 })
 export class WacTgJv {
 
-
+  async componentWillLoad() {
+    console.log("componentWillLoad command");
+  }
 
   render() {
     return (

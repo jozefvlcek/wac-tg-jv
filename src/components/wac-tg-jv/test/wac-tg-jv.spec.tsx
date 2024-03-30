@@ -8,11 +8,14 @@ describe('wac-tg-jv', () => {
       html: `<wac-tg-jv></wac-tg-jv>`,
     });
     expect(page.root).toEqualHtml(`
-      <wac-tg-jv>
+    <wac-tg-jv>
         <mock:shadow-root>
-          <slot></slot>
+          <md-filled-text-field label="Label" value="Value"></md-filled-text-field>
+          <md-outlined-text-field label="Label" value="Value"></md-outlined-text-field>
+          <md-outlined-button>Back</md-outlined-button>
+          <md-filled-button>Complete</md-filled-button>
         </mock:shadow-root>
-      </wac-tg-jv>
+    </wac-tg-jv>
     `);
   });
 });
