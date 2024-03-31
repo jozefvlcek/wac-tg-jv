@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, State } from '@stencil/core';
 
 @Component({
   tag: 'wac-tg-jv',
@@ -7,20 +7,30 @@ import { Component, Host, h } from '@stencil/core';
 })
 export class WacTgJv {
 
+  @State() labelContent: string;
+
   async componentWillLoad() {
     console.log("componentWillLoad command");
+  }
+
+  private handleInputEvent( ev: InputEvent) {
+    const target = ev.target as HTMLInputElement;
+    this.labelContent = target.value;
+  }
+
+  private handleOnClick(){
+    console.log(this.labelContent);
+    this.labelContent = "Vsetko ok";
   }
 
   render() {
     return (
       <Host>
-        <md-filled-text-field label="Label" value="Value">
+        <md-filled-text-field label="Label" value="Value"
+        oninput = { (ev: InputEvent) => this.handleInputEvent(ev)}>
         </md-filled-text-field>
-
-        <md-outlined-text-field label="Label" value="Value">
-        </md-outlined-text-field>
-        <md-outlined-button>Back</md-outlined-button>
-        <md-filled-button>Complete</md-filled-button>
+        <md-filled-button onclick = {() => this.handleOnClick()}>Ok</md-filled-button>
+        <span>{this.labelContent}</span>
       </Host>
     );
   }

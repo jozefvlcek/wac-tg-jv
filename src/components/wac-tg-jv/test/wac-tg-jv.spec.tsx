@@ -7,13 +7,14 @@ describe('wac-tg-jv', () => {
       components: [WacTgJv],
       html: `<wac-tg-jv></wac-tg-jv>`,
     });
+
+    
     expect(page.root).toEqualHtml(`
     <wac-tg-jv>
         <mock:shadow-root>
           <md-filled-text-field label="Label" value="Value"></md-filled-text-field>
-          <md-outlined-text-field label="Label" value="Value"></md-outlined-text-field>
-          <md-outlined-button>Back</md-outlined-button>
-          <md-filled-button>Complete</md-filled-button>
+          <md-filled-button>Ok</md-filled-button>
+          <span></span>
         </mock:shadow-root>
     </wac-tg-jv>
     `);
