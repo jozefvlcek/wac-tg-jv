@@ -1,0 +1,68 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #282c34;
+  padding: 20px;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  border-radius: 8px;
+}
+
+md-filled-button.large-button,
+md-outlined-button.large-button {
+  --mdc-button-height: 64px;
+  --mdc-button-horizontal-padding: 32px;
+  font-size: 1.5rem;
+}
+
+md-outlined-button.large-button {
+  --mdc-button-outline-color: white;
+  --mdc-button-outline-width: 2px;
+  color: white;
+  cursor: pointer;
+}
+
+md-filled-button.large-button {
+  --mdc-theme-primary: #6200ee;
+  padding: 15px;
+  color: white;
+  cursor: auto;
+}
+
+.list {
+  margin-top: 2rem;
+  width: 38%;
+  --md-list-container-color: #f0f0f0;
+  --mdc-list-side-padding: 16px;
+}
+
+md-list-item {
+  background-color: white;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+md-list-item:hover {
+  cursor: pointer;
+  border: 2px solid #6200ee57;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.error {
+  margin: auto;
+  color: red;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+}

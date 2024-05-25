@@ -7,7 +7,57 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface WacTgJv {
+        "apiBase": string;
+        "basePath": string;
     }
+    interface WacTgJvDoctor {
+        "apiBase": string;
+    }
+    interface WacTgJvDoctorRequirement {
+        "apiBase": string;
+        "requirementID": string;
+    }
+    interface WacTgJvNewRequirement {
+        "apiBase": string;
+        "currentUser": string;
+        "currentUserID": string;
+    }
+    interface WacTgJvPatient {
+        "apiBase": string;
+    }
+    interface WacTgJvPatientRequirement {
+        "apiBase": string;
+        "requirementID": string;
+    }
+    interface WacTgJvRequirements {
+        "apiBase": string;
+        "currentUser": string;
+        "currentUserID": string;
+    }
+}
+export interface WacTgJvDoctorCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLWacTgJvDoctorElement;
+}
+export interface WacTgJvDoctorRequirementCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLWacTgJvDoctorRequirementElement;
+}
+export interface WacTgJvNewRequirementCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLWacTgJvNewRequirementElement;
+}
+export interface WacTgJvPatientCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLWacTgJvPatientElement;
+}
+export interface WacTgJvPatientRequirementCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLWacTgJvPatientRequirementElement;
+}
+export interface WacTgJvRequirementsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLWacTgJvRequirementsElement;
 }
 declare global {
     interface HTMLWacTgJvElement extends Components.WacTgJv, HTMLStencilElement {
@@ -16,15 +66,161 @@ declare global {
         prototype: HTMLWacTgJvElement;
         new (): HTMLWacTgJvElement;
     };
+    interface HTMLWacTgJvDoctorElementEventMap {
+        "button-clicked": { event: string, requirementID: string };
+    }
+    interface HTMLWacTgJvDoctorElement extends Components.WacTgJvDoctor, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLWacTgJvDoctorElementEventMap>(type: K, listener: (this: HTMLWacTgJvDoctorElement, ev: WacTgJvDoctorCustomEvent<HTMLWacTgJvDoctorElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLWacTgJvDoctorElementEventMap>(type: K, listener: (this: HTMLWacTgJvDoctorElement, ev: WacTgJvDoctorCustomEvent<HTMLWacTgJvDoctorElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLWacTgJvDoctorElement: {
+        prototype: HTMLWacTgJvDoctorElement;
+        new (): HTMLWacTgJvDoctorElement;
+    };
+    interface HTMLWacTgJvDoctorRequirementElementEventMap {
+        "button-clicked": string;
+    }
+    interface HTMLWacTgJvDoctorRequirementElement extends Components.WacTgJvDoctorRequirement, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLWacTgJvDoctorRequirementElementEventMap>(type: K, listener: (this: HTMLWacTgJvDoctorRequirementElement, ev: WacTgJvDoctorRequirementCustomEvent<HTMLWacTgJvDoctorRequirementElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLWacTgJvDoctorRequirementElementEventMap>(type: K, listener: (this: HTMLWacTgJvDoctorRequirementElement, ev: WacTgJvDoctorRequirementCustomEvent<HTMLWacTgJvDoctorRequirementElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLWacTgJvDoctorRequirementElement: {
+        prototype: HTMLWacTgJvDoctorRequirementElement;
+        new (): HTMLWacTgJvDoctorRequirementElement;
+    };
+    interface HTMLWacTgJvNewRequirementElementEventMap {
+        "button-clicked": string;
+    }
+    interface HTMLWacTgJvNewRequirementElement extends Components.WacTgJvNewRequirement, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLWacTgJvNewRequirementElementEventMap>(type: K, listener: (this: HTMLWacTgJvNewRequirementElement, ev: WacTgJvNewRequirementCustomEvent<HTMLWacTgJvNewRequirementElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLWacTgJvNewRequirementElementEventMap>(type: K, listener: (this: HTMLWacTgJvNewRequirementElement, ev: WacTgJvNewRequirementCustomEvent<HTMLWacTgJvNewRequirementElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLWacTgJvNewRequirementElement: {
+        prototype: HTMLWacTgJvNewRequirementElement;
+        new (): HTMLWacTgJvNewRequirementElement;
+    };
+    interface HTMLWacTgJvPatientElementEventMap {
+        "button-clicked": { user: string, userID: string };
+    }
+    interface HTMLWacTgJvPatientElement extends Components.WacTgJvPatient, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLWacTgJvPatientElementEventMap>(type: K, listener: (this: HTMLWacTgJvPatientElement, ev: WacTgJvPatientCustomEvent<HTMLWacTgJvPatientElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLWacTgJvPatientElementEventMap>(type: K, listener: (this: HTMLWacTgJvPatientElement, ev: WacTgJvPatientCustomEvent<HTMLWacTgJvPatientElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLWacTgJvPatientElement: {
+        prototype: HTMLWacTgJvPatientElement;
+        new (): HTMLWacTgJvPatientElement;
+    };
+    interface HTMLWacTgJvPatientRequirementElementEventMap {
+        "button-clicked": string;
+    }
+    interface HTMLWacTgJvPatientRequirementElement extends Components.WacTgJvPatientRequirement, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLWacTgJvPatientRequirementElementEventMap>(type: K, listener: (this: HTMLWacTgJvPatientRequirementElement, ev: WacTgJvPatientRequirementCustomEvent<HTMLWacTgJvPatientRequirementElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLWacTgJvPatientRequirementElementEventMap>(type: K, listener: (this: HTMLWacTgJvPatientRequirementElement, ev: WacTgJvPatientRequirementCustomEvent<HTMLWacTgJvPatientRequirementElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLWacTgJvPatientRequirementElement: {
+        prototype: HTMLWacTgJvPatientRequirementElement;
+        new (): HTMLWacTgJvPatientRequirementElement;
+    };
+    interface HTMLWacTgJvRequirementsElementEventMap {
+        "button-clicked": { event: string, requirementID: string };
+    }
+    interface HTMLWacTgJvRequirementsElement extends Components.WacTgJvRequirements, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLWacTgJvRequirementsElementEventMap>(type: K, listener: (this: HTMLWacTgJvRequirementsElement, ev: WacTgJvRequirementsCustomEvent<HTMLWacTgJvRequirementsElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLWacTgJvRequirementsElementEventMap>(type: K, listener: (this: HTMLWacTgJvRequirementsElement, ev: WacTgJvRequirementsCustomEvent<HTMLWacTgJvRequirementsElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLWacTgJvRequirementsElement: {
+        prototype: HTMLWacTgJvRequirementsElement;
+        new (): HTMLWacTgJvRequirementsElement;
+    };
     interface HTMLElementTagNameMap {
         "wac-tg-jv": HTMLWacTgJvElement;
+        "wac-tg-jv-doctor": HTMLWacTgJvDoctorElement;
+        "wac-tg-jv-doctor-requirement": HTMLWacTgJvDoctorRequirementElement;
+        "wac-tg-jv-new-requirement": HTMLWacTgJvNewRequirementElement;
+        "wac-tg-jv-patient": HTMLWacTgJvPatientElement;
+        "wac-tg-jv-patient-requirement": HTMLWacTgJvPatientRequirementElement;
+        "wac-tg-jv-requirements": HTMLWacTgJvRequirementsElement;
     }
 }
 declare namespace LocalJSX {
     interface WacTgJv {
+        "apiBase"?: string;
+        "basePath"?: string;
+    }
+    interface WacTgJvDoctor {
+        "apiBase"?: string;
+        "onButton-clicked"?: (event: WacTgJvDoctorCustomEvent<{ event: string, requirementID: string }>) => void;
+    }
+    interface WacTgJvDoctorRequirement {
+        "apiBase"?: string;
+        "onButton-clicked"?: (event: WacTgJvDoctorRequirementCustomEvent<string>) => void;
+        "requirementID"?: string;
+    }
+    interface WacTgJvNewRequirement {
+        "apiBase"?: string;
+        "currentUser"?: string;
+        "currentUserID"?: string;
+        "onButton-clicked"?: (event: WacTgJvNewRequirementCustomEvent<string>) => void;
+    }
+    interface WacTgJvPatient {
+        "apiBase"?: string;
+        "onButton-clicked"?: (event: WacTgJvPatientCustomEvent<{ user: string, userID: string }>) => void;
+    }
+    interface WacTgJvPatientRequirement {
+        "apiBase"?: string;
+        "onButton-clicked"?: (event: WacTgJvPatientRequirementCustomEvent<string>) => void;
+        "requirementID"?: string;
+    }
+    interface WacTgJvRequirements {
+        "apiBase"?: string;
+        "currentUser"?: string;
+        "currentUserID"?: string;
+        "onButton-clicked"?: (event: WacTgJvRequirementsCustomEvent<{ event: string, requirementID: string }>) => void;
     }
     interface IntrinsicElements {
         "wac-tg-jv": WacTgJv;
+        "wac-tg-jv-doctor": WacTgJvDoctor;
+        "wac-tg-jv-doctor-requirement": WacTgJvDoctorRequirement;
+        "wac-tg-jv-new-requirement": WacTgJvNewRequirement;
+        "wac-tg-jv-patient": WacTgJvPatient;
+        "wac-tg-jv-patient-requirement": WacTgJvPatientRequirement;
+        "wac-tg-jv-requirements": WacTgJvRequirements;
     }
 }
 export { LocalJSX as JSX };
@@ -32,6 +228,12 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "wac-tg-jv": LocalJSX.WacTgJv & JSXBase.HTMLAttributes<HTMLWacTgJvElement>;
+            "wac-tg-jv-doctor": LocalJSX.WacTgJvDoctor & JSXBase.HTMLAttributes<HTMLWacTgJvDoctorElement>;
+            "wac-tg-jv-doctor-requirement": LocalJSX.WacTgJvDoctorRequirement & JSXBase.HTMLAttributes<HTMLWacTgJvDoctorRequirementElement>;
+            "wac-tg-jv-new-requirement": LocalJSX.WacTgJvNewRequirement & JSXBase.HTMLAttributes<HTMLWacTgJvNewRequirementElement>;
+            "wac-tg-jv-patient": LocalJSX.WacTgJvPatient & JSXBase.HTMLAttributes<HTMLWacTgJvPatientElement>;
+            "wac-tg-jv-patient-requirement": LocalJSX.WacTgJvPatientRequirement & JSXBase.HTMLAttributes<HTMLWacTgJvPatientRequirementElement>;
+            "wac-tg-jv-requirements": LocalJSX.WacTgJvRequirements & JSXBase.HTMLAttributes<HTMLWacTgJvRequirementsElement>;
         }
     }
 }

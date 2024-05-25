@@ -1,0 +1,55 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.hostApi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.list {
+  margin-top: 2rem;
+  width: 38%;
+  --md-list-container-color: #f0f0f0;
+}
+
+md-list-item {
+  background-color: white;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+md-list-item:hover {
+  cursor: pointer;
+  border: 2px solid #6200ee57;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+md-filled-button.large-button {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  padding: 0.5rem 5rem;
+  cursor: pointer;
+}
+
+.add-button {
+  --md-filled-icon-button-container-size: 1rem;
+  --md-filled-icon-button-icon-size: 2rem;
+}
+
+.error {
+  margin: auto;
+  color: red;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+}

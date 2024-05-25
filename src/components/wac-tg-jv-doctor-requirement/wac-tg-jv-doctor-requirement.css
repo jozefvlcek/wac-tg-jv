@@ -1,0 +1,71 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+form {
+  margin-top: 2rem;
+  width: 30%;
+  padding: 20px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-radius: 8px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  background-color: white;
+  margin-bottom: 2rem;
+  border-radius: 15px;
+}
+
+.box-container {
+  justify-content: center;
+  overflow: hidden;
+  flex-direction: column;
+  text-align: center;
+  margin: 1rem;
+}
+
+.title {
+  font-size: 18px;
+  margin-bottom: 5px;
+  display: block;
+  color: black;
+}
+
+.box {
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  background-color: #cacaca;
+  border-radius: 8px;
+}
+
+.text {
+  font-size: 20px;
+}
+
+md-outlined-text-field {
+  width: 100%;
+  --md-outlined-text-field-container-shape: 10px;
+  margin-bottom: 2rem;
+}
+
+md-filled-button {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.error {
+  margin: auto;
+  color: red;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+}

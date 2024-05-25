@@ -5,7 +5,7 @@ describe('wac-tg-jv', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [WacTgJv],
-      html: `<wac-tg-jv></wac-tg-jv>`,
+      html: `<wac-tg-jv-app></wac-tg-jv-app>`,
     });
 
     
